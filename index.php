@@ -13,16 +13,19 @@ code {
 </head>
 <body>
 
-<h1>The code element + CSS</h1>
+	<?php
+	   require 'vendor/autoload.php';
+	?>
 
-<p>The HTML <code>button</code> tag defines a clickable button.</p>
-<p>The CSS <code>background-color</code> property defines the background color of an element.</p>
+	<h1>The code element + CSS</h1>
+
+	<p>The HTML <code>button</code> tag defines a clickable button.</p>
+	<p>The CSS <code>background-color</code> property defines the background color of an element.</p>
 
 </body>
 </html>
 
-<?php
-?>
+
 <!--
 <!DOCTYPE html>
 <html lang="en-US">
