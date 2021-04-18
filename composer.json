@@ -11,6 +11,7 @@
     ],
     "require": {
         "league/color-extractor": "0.3.*",
-        "monolog/monolog": "~1.17.0" //~1.17.0 means >=1.17.0  and <1.18.0
+
+        "monolog/monolog": "~1.17.0" 
     }
 }
