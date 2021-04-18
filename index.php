@@ -1,33 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-code {
-  font-family: Consolas,"courier new";
-  color: crimson;
-  background-color: #f1f1f1;
-  padding: 2px;
-  font-size: 105%;
-}
-</style>
-</head>
-<body>
-
-	<?php
-	   require 'vendor/autoload.php';
-	?>
-
-	<h1>The code element + CSS</h1>
-
-	<p>The HTML <code>button</code> tag defines a clickable button.</p>
-	<p>The CSS <code>background-color</code> property defines the background color of an element.</p>
-
-</body>
-</html>
-
-
-<!--
-<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -39,17 +10,41 @@ code {
 
  <body>
 
+    <?php
+	   require 'vendor/autoload.php';
+	   use League\ColorExtractor\Color;
+	   use League\ColorExtractor\ColorExtractor;
+		use League\ColorExtractor\Palette;
+
+	   $palette = Palette::fromFilename('./images/flags.jpg');
+
+	?>
+
  	<header class="masthead">
  		<div class="site-branding">
  			<h1 class="site-title">Image Abstractor</h1>
  			<p class="site-description">Pull the most domin</p>
  		</div>
  	<header>
- 	<section>
- 		<p>test</p>
+ 	<section class="the-grid">
+ 		<ul class="colors">
+ 			<?php
+	 			   $colors=$palette->getMostUsedColors(1024);
+
+	 			   foreach ($colors as $color => $count) {
+
+	 			   	  //convert rgb int value to hex color value using fromIntToHex()
+	 			   	  $current = Color::fromIntToHex($color); 
+
+	 			   	  //finally, output list item with all current colors' information
+	 			   	  echo '<li style="background-color:' . $current . '">' . $current . '</li>'; 
+	 			   }
+
+	 			   // Magical image abstraction thing will happen here.
+ 			?>
+ 		</ul>
  	</section>
  </body>
-</html>
--->
+ </html>
 
 
